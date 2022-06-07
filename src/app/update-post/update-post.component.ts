@@ -9,27 +9,33 @@ import { PostService } from '../controller/service/post.service';
   styleUrls: ['./update-post.component.css']
 })
 export class UpdatePostComponent implements OnInit {
+    id:number;
     post: Post=new Post();
   constructor(private postservices:PostService ,private activaterouter:ActivatedRoute) { }
 
   ngOnInit(): void {
-    
-  console.log(atob(this.activaterouter.snapshot.params['id']));
+    this.id=this.activaterouter.snapshot.params['id']
+     console.log(this.activaterouter.snapshot.params['id']);
 
- this.postservices.createPost(this.post).subscribe( data =>{
- this.post=findOnepost(this.activaterouter.snapshot.params['id']) ;
-},
-error => console.log(error));
-  }
+
+ this.postservices.findOnepost(this.id).subscribe( data =>{
+   this.post=data;
+   console.log(data);
+
+      },
+     error => console.log(error));
+                 }
 
   updatePost(){
- 
-   // this.postservices.updatePost(this.router.pa)
-   //this.postservices.updatePost();
-
+    
+   this.postservices.updatePost(this.id,this.post).subscribe( data =>{
+       },
+      error => console.log(error))
   }
-  onSubmit(){
 
+
+  onSubmit(){
+    this.updatePost();
   }
 
 

@@ -27,7 +27,7 @@ findAllpost():Observable<Post[]>{
 return this.http.get<Post[]>(this.baseURL);
 }
 
-findOnepost(id:any):Observable<Post>{
+findOnepost(id:number):Observable<Post>{
   return this.http.get<Post>(this.baseURL+"/"+id);
   }
 
