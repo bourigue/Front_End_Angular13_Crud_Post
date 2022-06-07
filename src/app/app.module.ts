@@ -8,6 +8,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostCreateComponent } from './post-create/post-create.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UpdatePostComponent } from './update-post/update-post.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { PostCreateComponent } from './post-create/post-create.component';
     NavbarComponent,
     HomeComponent,
     PostListComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    UpdatePostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

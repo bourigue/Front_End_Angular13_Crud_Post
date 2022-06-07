@@ -1,1 +1,34 @@
-<p>post-create works!</p>
+<div class="row">
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+      <div class="row">
+          <h3 class="text-center"> Create Employee </h3>
+          <hr />
+          <div class="card-body">
+              <form  #f="ngForm" (ngSubmit)="onSubmit()">
+
+                  <div class="form-group">
+                      <label>User Id</label>
+                      <input type="number" class="form-control" id="userId" [(ngModel)]="post.userId"
+                          name="UserId">
+                  </div>
+
+                  <div class="form-group">
+                      <label>Descripton</label>
+                      <input type="text" class="form-control" id="description" [(ngModel)]="post.description"
+                          name="description">
+                  </div>
+
+                  <div class="form-group">
+                      <label>Image</label>
+                      <input type="text" class="form-control" id="image" [(ngModel)]="post.image"
+                          name="image">
+                  </div>
+
+                  <br />
+                  <button class="btn btn-success" type="submit">Submit</button>
+
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

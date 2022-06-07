@@ -1,0 +1,22 @@
+<div class="container">
+<div class="row">
+
+    <form #f="ngForm"   (ngSubmit)="onSubmit()"> 
+   <div class="form-group">
+<label>User Id</label>
+<input type="text" class="form-control" placeholder="user Id" [(ngModel)]="post.userId" name="userId">
+   </div>
+   <div class="form-group">
+    <label>description</label>
+    <input type="text" class="form-control" placeholder="Description" [(ngModel)]="post.description" name="userId">
+       </div>
+       <div class="form-group">
+        <label>image</label>
+        <input type="text" class="form-control" placeholder="image" [(ngModel)]="post.image" name="userId">
+           </div>
+            <button class="btn btn-success">Update</button>
+
+    </form>
+</div>
+
+</div>
