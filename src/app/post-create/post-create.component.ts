@@ -8,33 +8,28 @@ import { PostService } from '../controller/service/post.service';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
+
  post: Post = new Post();
- //id=0;
- //description="";
- //userId=1;
- //image="";
- 
- 
+
+
+
   constructor(private postsserv:PostService) { }
 
-  ngOnInit(): void {
-   
-  }
-  onSubmit(){
-    console.log(this.post);
-    this.saveEmployee();
-    
-  }
+  ngOnInit(): void {}
 
-  saveEmployee(){
+  // execute the method
+  onSubmit(){
+    this.savePost();
+  }
+// add the post
+  savePost(){
     this.postsserv.createPost(this.post).subscribe( data =>{
       console.log(data);
-     
-    },
+      },
     error => console.log(error));
   }
-  
-  
+
+
 
 
 }
